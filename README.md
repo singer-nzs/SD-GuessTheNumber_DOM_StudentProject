@@ -19,7 +19,7 @@ Think carefully about how the computer will guess a number. Start with it guessi
 ## Workspace
 You will see the following folder structure:
 
-<img src='./assets/filestructure.png' />
+<img src='./assets/filestructure02.png' />
 
 Don't worry if the color of the files are not the same.
 
