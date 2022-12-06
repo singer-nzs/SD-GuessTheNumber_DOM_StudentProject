@@ -3,7 +3,7 @@
     - It should be compared to a variable named: numberToGuess
 */
 
-function randomNumber(x, generatedNumber) {
+function randomNumber(userGuess, computersNumber) {
 
     // YOUR CODE BELOW
 

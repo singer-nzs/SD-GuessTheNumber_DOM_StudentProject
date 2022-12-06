@@ -6,7 +6,7 @@ const compGuessResponse = document.querySelector('#comp-guesses-response');
 const highLowBtns = document.getElementById('lower-higher-btns').childNodes;
 const res = document.getElementById('status-response');
 let guessedNumber;
-let numberToGuess = Math.floor(Math.random() * 101) + 1;
+let numberToGuess = Math.floor(Math.random() * 100) + 1;
 
 let displayResponse = (x) => {
     res.innerText = x;
