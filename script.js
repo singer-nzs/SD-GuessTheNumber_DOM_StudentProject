@@ -3,17 +3,13 @@
     - It should be compared to a variable named: numberToGuess
 */
 
-function randomNumber(userGuess, computersNumber) {
-
     // YOUR CODE BELOW
+/*     if (userGuess >= 101) {
+        return ("Too High. Guesses must be between 1-100.");
+    } else if (userGuess < -1) {
+        return ("Too Low. Guesses must be between 1-100."); */
 
-
-
-
-    // YOUR CODE ABOVE
-};
-
-
+            // YOUR CODE ABOVE
 
 //* Have the Computer Guess your Number ---------------------------------------------
 /* 
@@ -29,21 +25,59 @@ function randomNumber(userGuess, computersNumber) {
 
     You are not limited to just these functions. Feel free to create a new function that may be called to help manage the flow of your code.
 */
-
-function startCompGuess(num) {
     // This should return a string that denotes the first guessed number
-
     // YOUR CODE ...
 
-
-}
-
-function compGuess(reply) {
-    /* 
+        /* 
     *   The parameter "reply" will either be passing "lower", "correct", or "higher". This should be considered when evaluating th elogic and response.
 
     This should return a string indicating the computers response.
     */
 
-}
+let min = 1;
+let max = 100;
+let x ;
+let callCount = 0;
 
+function randomNumber(userGuess, computersNumber) {
+    callCount += 1;
+    if (userGuess >= 101) {
+        return("Too high! Numbers must be between 1 and 100.");
+    } else if (userGuess <= 0) {
+        return("Too low! Numbers must be between 1 and 100.");
+    };
+    if (userGuess < computersNumber) {
+        return("Higher");
+    } else if (userGuess > computersNumber) {
+        return("Lower");
+    } else (userGuess === computersNumber)
+        return(`Correct, it's ${computersNumber}! It only took you ${callCount} tries.`);
+};
+
+function startCompGuess(num) {
+    x = num;
+    return(`Is ${num} your number?`)
+};
+
+function newNumber(min, max) {
+    console.log(min, max);
+    x = Math.floor(Math.random() * (max - min + 1) + min);
+    return x;
+};
+
+function compGuess(reply) {
+    callCount += 1;
+    console.log(x);
+    if (reply === 'correct') {
+        console.log(reply);
+        return(`Yay, I got it! It took me ${callCount} tries!`);
+    } else if (reply == 'lower') {
+        max = x - 1
+        console.log(reply);
+        return(`Okay. How about ${newNumber(min, max)}?`);
+    } else if (reply == 'higher') {
+        min = x + 1
+        console.log(reply);
+        return(`Okay. How about ${newNumber(min, max)}?`);
+    };
+};
